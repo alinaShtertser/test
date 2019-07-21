@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormGroup, Label, Input, FormText, FormFeedback } from 'reactstrap';
 
 import './formField.scss'
 
@@ -9,7 +10,6 @@ export default class FormField extends React.Component {
       input,
       label,
       name,
-      type,
       render,
       meta: { touched, error, warning, dirty },
       fromFieldClassName,
@@ -17,19 +17,16 @@ export default class FormField extends React.Component {
     } = this.props;
     return <div className={`${fromFieldClassName} field`}>
       <label className="field_label">{render ? render() : label}
-        <input
+        <Input
           className="field_input"
           name={name}
-          type={type}
           {...(touched || dirty ? { valid: !error, invalid: !!error } : {})}
           {...input}
           {...custom}
-
         />
-        {type && (type === 'checkbox' || type === 'radio') && <span className="checkmark"></span>}
       </label>
-      {error && (touched || dirty) && <span>{error}</span>}
-      {!error && warning && <span>{warning}</span>}
+      {error && (touched || dirty) && <FormFeedback>{error}</FormFeedback>}
+      {!error && warning && <FormText>{warning}</FormText>}
     </div>;
   }
 }

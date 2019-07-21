@@ -1,0 +1,13 @@
+@import '../../styles/base/constants';
+
+.wrapper {
+  background: $default-background-image;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 113px;
+  min-height: 100vh;
+
+  @media only screen and (max-width : 640px) {
+    padding: 48px 20px;
+  }
+}

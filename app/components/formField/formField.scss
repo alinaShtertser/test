@@ -3,104 +3,15 @@
 
 .field {
   &_label {
-    font: 1.375rem $PTSans-bold;
-    @include flex($align: flex-end);
+    font: 1.075rem $PTSans-bold;
     width: 100%;
   }
 
   &_input {
-    border-top-width: 0;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-bottom: 4px solid transparent;
-    border-image: $input-border-image 30 round;
-    background: transparent;
-    flex: 1 auto;
     font: 1.875rem $form-field-font-family;
-    padding: 11px 18px 15px 18px;
-    margin-left: 18px;
-
     &:focus,
     &:active {
       outline: none;
-    }
-  }
-
-  &.checkbox,
-  &.radio {
-    .checkmark {
-      position: absolute;
-      top: 6px;
-      left: 0;
-      background-image: $checkbox-border-image;
-      background-repeat: no-repeat;
-      background-position: center center;
-
-      &:after {
-        content: "";
-        position: absolute;
-        display: none;
-        background-repeat: no-repeat;
-        background-position: center center;
-      }
-    }
-
-    .field_label {
-      display: block;
-      position: relative;
-      padding-left: 28px;
-      margin-bottom: 8px;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .field_input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
-
-      &:checked ~ .checkmark {
-        &:after {
-          display: block;
-        }
-      }
-    }
-  }
-
-  &.checkbox {
-    .checkmark {
-      background-image: $checkbox-border-image;
-      @include size(18px);
-
-      &:after {
-        background-image: $checkbox-image;
-        left: 2px;
-        bottom: 2px;
-        @include size(20px, 24px);
-      }
-    }
-  }
-
-  &.radio {
-    margin-right: 10px;
-
-    .checkmark {
-      background-image: $radio-border-image;
-      @include size(27px, 26px);
-      top: 2px;
-
-      &:after {
-        background-image: $radio-image;
-        left: 7px;
-        bottom: 7px;
-        @include size(12px);
-      }
-    }
-
-    .field_label {
-      padding-left: 32px;
     }
   }
 }

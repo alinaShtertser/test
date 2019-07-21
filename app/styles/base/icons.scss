@@ -7,11 +7,6 @@
   background-repeat: no-repeat;
   background-position: center center;
 
-
-  &_logo {
-    @include icon($logo-image, 144px, 36px);
-  }
-
   &_secret {
     @include icon($secret-image, 254px, 108px);
   }

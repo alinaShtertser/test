@@ -7,7 +7,8 @@ module.exports = {
     entry: "./app/index.js",
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: "index_bundle.js"
+        filename: "index_bundle.js",
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -44,5 +45,8 @@ module.exports = {
             template: "./app/index.html"
         }),
         new ExtractTextPlugin('style.css')
-    ]
+    ],
+    devServer: {
+        historyApiFallback: true,
+    },
 };
