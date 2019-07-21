@@ -1,0 +1,22 @@
+@import './constants';
+@import './mixins';
+
+.icon {
+  content: '';
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+
+  &_logo {
+    @include icon($logo-image, 144px, 36px);
+  }
+
+  &_secret {
+    @include icon($secret-image, 254px, 108px);
+  }
+
+  &_title {
+    @include icon($title-image, 221px, 109px);
+  }
+}

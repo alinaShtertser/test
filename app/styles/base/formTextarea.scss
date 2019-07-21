@@ -1,0 +1,17 @@
+@import '../../styles/base/mixins';
+@import '../../styles/base/constants';
+
+.field-textarea {
+  background-image: $textarea-image;
+  border: none;
+  background-color: transparent;
+  line-height: 58px;
+  font: 1.875rem $form-field-font-family;
+  padding: 8px;
+  width:100%;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}

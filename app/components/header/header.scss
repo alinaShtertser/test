@@ -1,0 +1,14 @@
+@import '../../styles/base/mixins';
+
+.header {
+  @include flex($justify: space-between);
+
+  .logo {
+    padding: 22px 3px;
+  }
+
+  .icon_secret {
+    position: relative;
+    right: -60px;
+  }
+}

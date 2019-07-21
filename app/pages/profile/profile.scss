@@ -1,0 +1,39 @@
+@import '../../styles/base/mixins';
+@import '../../styles/base/constants';
+@import '../../styles/base/formTextarea';
+
+.profile {
+  background: $default-background-image;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 113px;
+
+  &_base_info {
+    margin-bottom: 60px;
+  }
+
+  &_title {
+    text-align: center;
+    padding-top: 9px;
+    margin-bottom: 26px;
+
+    .icon_title {
+      display: inline-block;
+      position: relative;
+      left: -18px;
+    }
+  }
+
+  &_checkboxes_wrapper,
+  &_radio_wrapper {
+    @include flex($wrap: true);
+
+    .checkbox {
+      width: calc(100% / 3);
+    }
+
+    .radio {
+      margin-right: 19px;
+    }
+  }
+}

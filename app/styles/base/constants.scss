@@ -1,0 +1,30 @@
+/*SIZE*/
+
+/*COLORS*/
+
+$default-background-color: #797979;
+$default-text-color: #3d3d3d;
+$default-link-color: #1f5f97;
+
+$alternate-font-family: Arial, Helvetica, sans-serif;
+$PTSans-bold: 'PTSans Bold', $alternate-font-family;
+$CourierNewPSMT: 'CourierNewPSMT', $alternate-font-family;
+
+$default-font-family: 'PTSans', $alternate-font-family;
+$title-font-family: $PTSans-bold;
+$form-field-font-family: $CourierNewPSMT, $alternate-font-family;
+
+
+
+/*IMAGES URL*/
+$default-background-image: url("../../img/background.png");
+$logo-image: url("../img/logo.png");
+$secret-image: url("../img/secret.png");
+$title-image: url("../img/anketa.png");
+$input-border-image: url("../../img/input-border.png");
+$checkbox-image: url("../../img/tick.png");
+$radio-image: url("../../img/radio-tick.png");
+$checkbox-border-image: url("../../img/checkbox.png");
+$radio-border-image: url("../../img/radio.png");
+$textarea-image: url("../../img/textarea-bg.png");
+

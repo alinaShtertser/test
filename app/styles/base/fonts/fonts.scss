@@ -1,0 +1,26 @@
+$font-path: './base/fonts/';
+@import './../mixins';
+
+@include font-face(
+  'PTSans',
+  $font-path + 'PTSans-Regular',
+  $file-name: 'PTS55F',
+  $weight: 400,
+  $style: normal
+);
+
+@include font-face(
+  'PTSans Bold',
+  $font-path + 'PTSans-Bold',
+  $file-name: 'PTS75F',
+  $weight: 800,
+  $style: normal
+);
+
+@include font-face(
+  'CourierNewPSMT',
+  $font-path + 'courierNewPSMT',
+  $file-name: 'CourierNewPSMT-CourierNew-Regular',
+  $weight: 800,
+  $style: normal
+);

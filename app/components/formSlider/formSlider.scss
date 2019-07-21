@@ -1,0 +1,111 @@
+@import '../../styles/base/mixins';
+@import '../../styles/base/constants';
+
+$mover-w: 100%;
+$thumb-d: 24px;
+$track-w: $mover-w;
+$track-h: 4px;
+$track-c: red;
+$ruler-c: #95a;
+$ruler-u: calc(100% / 3);
+$ruler-w: 2px;
+
+@mixin track() {
+  box-sizing: border-box;
+  border: none;
+  width: $track-w; height: $track-h;
+  background: $track-c;
+}
+
+@mixin thumb() {
+  box-sizing: border-box;
+  border: none;
+  width: $thumb-d; height: $thumb-d;
+  border-radius: 50%;
+  background: $track-c;
+}
+
+@mixin thumb-focus() { background: #f90; }
+
+.range {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  width: $track-w;
+  color: $track-c;
+  font: 1em/1 trebuchet ms, tahoma, sans-serif;
+
+  &_input {
+    width: 100%;
+  }
+
+  [type='range'] {
+    &, &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+
+    margin: 0;
+    padding: 0;
+    width: 100%; height: 2*$thumb-d;
+    background:
+            repeating-linear-gradient(90deg,
+                    $track-c 0,
+                    $track-c $ruler-w,
+                    transparent 0,
+                    transparent $ruler-u)
+            calc(.5*(#{$thumb-d} - #{$ruler-w})) 1.25*$thumb-d/ calc(#{$mover-w} + #{$ruler-w}) .5*$thumb-d no-repeat;
+    font: inherit;
+
+    &::-webkit-slider-runnable-track {
+      @include track
+    }
+    &::-moz-range-track { @include track }
+    &::-ms-track { @include track }
+
+    &::-webkit-slider-thumb {
+      margin-top: .5*($track-h - $thumb-d);
+      @include thumb
+    }
+    &::-moz-range-thumb { @include thumb }
+    &::-ms-thumb {
+      margin-top: 0;
+      @include thumb
+    }
+
+    &::-ms-tooltip { display: none }
+
+    &:focus {
+      outline: none;
+
+      &::-webkit-slider-thumb {
+        @include thumb-focus
+      }
+      &::-moz-range-thumb { @include thumb-focus }
+      &::-ms-thumb {
+        @include thumb-focus
+      }
+
+      ~ label span { color: $ruler-c }
+    }
+
+    ~ label {
+      color: #333;
+
+      span { color: $track-c }
+
+      &:after { margin: -4px; content: ':' }
+    }
+  }
+
+  &_labels {
+    position: absolute;
+    bottom: 0; left: .5*$thumb-d;
+
+    span {
+      position: absolute;
+      left: calc(var(--i)*#{$ruler-u});
+      transform: translate(-50%) scale(.9);
+      font-weight: 700
+    }
+  }
+}
